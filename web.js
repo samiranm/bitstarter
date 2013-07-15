@@ -1,9 +1,15 @@
+#!/usr/bin/env node
+
 var express = require('express');
 
 var app = express.createServer(express.logger());
 
+var bufr1 = fs.readFileSync("index.html");
+
+var text1 = bufr1.toString("utf-8");
+
 app.get('/', function(request, response) {
-  response.send('Hello World 2!');
+  response.send(text1);
 });
 
 var port = process.env.PORT || 5000;
