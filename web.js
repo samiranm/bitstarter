@@ -8,10 +8,13 @@ var bufr1 = fs.readFileSync("index.html");
 
 var text1 = bufr1.toString("utf-8");
 
-app.set('text2',text1);
 
 app.get('/', function(request, response) {
-    response.send('text2');
+
+var fs=require('fs');
+var bufr1=fs.readFileSync("index.html");
+var text1=bufr1.toString('utc 8');
+    response.send('text1');
 });
 
 var port = process.env.PORT || 5000;
